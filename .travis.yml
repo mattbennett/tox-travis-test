@@ -15,26 +15,27 @@ install:
   - pip install tox-travis
 
 env:
-  - TOX_ENV=oldest-lib
-  - TOX_ENV=pinned-lib
-  - TOX_ENV=latest-lib
-  - TOX_ENV=mastereventlet-lib
+  - DEPS=oldest
+  - DEPS=pinned
+  - DEPS=latest
+  - DEPS=mastereventlet
+  - TASK=lib
 
 matrix:
   fast_finish: true
   include:
     - python: 2.7
-      env: TOX_ENV=examples
+      env: TASK=examples
     - python: 3.4
-      env: TOX_ENV=examples
+      env: TASK=examples
     - python: 3.4
-      env: TOX_ENV=branchcoverage-lib
+      env: TASK=branchcoverage
     - python: 3.4
-      env: TOX_ENV=docs
+      env: TASK=docs
 
   allow_failures:
-    - env: TOX_ENV=mastereventlet-lib
-    - env: TOX_ENV=branchcoverage-lib
+    - env: DEPS=mastereventlet
+    - env: TASK=branchcoverage
 
 script:
   - tox
