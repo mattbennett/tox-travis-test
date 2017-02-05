@@ -12,7 +12,7 @@ cache:
     - $HOME/.cache/pip
 
 install:
-  - pip install tox
+  - pip install tox-travis
 
 env:
   - TOX_ENV=oldest-lib
