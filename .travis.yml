@@ -15,26 +15,26 @@ install:
   - pip install tox-travis
 
 env:
-  - DEPS=oldest
-  - DEPS=pinned
-  - DEPS=latest
-  - DEPS=mastereventlet
+  - FACTOR=oldest
+  - FACTOR=pinned
+  - FACTOR=latest
+  - FACTOR=mastereventlet
 
 matrix:
   fast_finish: true
   include:
     - python: 2.7
-      env: TASK=examples
+      env: FACTOR=examples
     - python: 3.4
-      env: TASK=examples
+      env: FACTOR=examples
     - python: 3.4
-      env: TASK=branchcoverage
+      env: FACTOR=branchcoverage
     - python: 3.4
-      env: TASK=docs
+      env: FACTOR=docs
 
   allow_failures:
-    - env: DEPS=mastereventlet
-    - env: TASK=branchcoverage
+    - env: FACTOR=mastereventlet
+    - env: FACTOR=branchcoverage
 
 script:
   - tox
