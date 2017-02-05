@@ -24,17 +24,17 @@ matrix:
   fast_finish: true
   include:
     - python: 2.7
-      env: TOX_ENV=py27-examples
+      env: TASK=examples
     - python: 3.4
-      env: TOX_ENV=py34-examples
+      env: TASK=examples
     - python: 3.4
-      env: TOX_ENV=py34-branchcoverage-lib
+      env: TASK=branchcoverage
     - python: 3.4
-      env: TOX_ENV=docs
+      env: TASK=docs
 
   allow_failures:
     - env: DEPS=mastereventlet
-    - env: TOX_ENV=py34-branchcoverage-lib
+    - env: TASK=branchcoverage
 
 script:
   - tox
