@@ -11,6 +11,9 @@ cache:
   directories:
     - $HOME/.cache/pip
 
+install:
+  - pip install tox
+
 env:
   - TOX_ENV=oldest-lib
   - TOX_ENV=pinned-lib
